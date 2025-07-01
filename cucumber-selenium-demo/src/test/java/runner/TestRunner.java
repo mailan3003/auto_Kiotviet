@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/resources/features/productEmptyCategory.feature",
+    features = "src/test/resources/features/kiotvietsales.feature",
     glue = {"steps"},
     plugin = {"pretty", "html:target/cucumber-report.html"},
     monochrome = true

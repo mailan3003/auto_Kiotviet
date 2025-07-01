@@ -17,7 +17,7 @@ public class ProductPage {
     }
 
     // Đóng overlay vodal nếu xuất hiện
-    private void closeOverlayIfPresent() {
+    public void closeOverlayIfPresent() {
         try {
             List<WebElement> overlays = driver.findElements(By.cssSelector("div.vodal-mask"));
             if (!overlays.isEmpty() && overlays.get(0).isDisplayed()) {
