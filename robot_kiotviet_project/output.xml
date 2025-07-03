@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.5 on win32)" generated="2025-07-03T23:59:33.367370" rpa="false" schemaversion="5">
+<suite id="s1" name="Logout Success" source="D:\New folder\robot_kiotviet_project\tests\logout_success.robot">
+<test id="s1-t1" name="Valid Logout Test" line="6">
+<kw name="Open Login Page" owner="login_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:33.598340" level="INFO">Opening browser 'chrome' to base url 'https://testz23.kiotviet.vn/man/#/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-03T23:59:33.598070" elapsed="2.907749"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.506273" elapsed="0.048307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=UserName</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.554905" elapsed="0.024647"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:33.597341" elapsed="2.982356"/>
+</kw>
+<kw name="Input Credentials" owner="login_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:36.581009" level="INFO">Typing text 'admin' into text field 'id=UserName'.</msg>
+<arg>id=UserName</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.580677" elapsed="0.105004"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:36.686108" level="INFO">Typing text 'Kiotviet123456' into text field 'id=Password'.</msg>
+<arg>id=Password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.685846" elapsed="0.081581"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:36.768196" level="INFO">Clicking button 'name=quan-ly'.</msg>
+<arg>name=quan-ly</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.767741" elapsed="0.181421"/>
+</kw>
+<arg>${VALID_USER}</arg>
+<arg>${VALID_PASS}</arg>
+<status status="PASS" start="2025-07-03T23:59:36.580159" elapsed="0.369151"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/DashBoard</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-03T23:59:36.949921" elapsed="1.992988"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>css=.vodal-mask</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-03T23:59:38.943474" elapsed="3.356834"/>
+</kw>
+<kw name="Close Vodal Overlay If Present" owner="login_keywords">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:42.318468" level="INFO">Element 'css=.vodal-close' is displayed.</msg>
+<arg>css=.vodal-close</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-03T23:59:42.301304" elapsed="0.017264"/>
+</kw>
+<msg time="2025-07-03T23:59:42.318724" level="INFO">${exists} = True</msg>
+<var>${exists}</var>
+<arg>Element Should Be Visible</arg>
+<arg>css=.vodal-close</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-03T23:59:42.301146" elapsed="0.017610"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:42.319548" level="INFO">Executing JavaScript:
+document.querySelector(".vodal-close").click()
+Without any arguments.</msg>
+<arg>document.querySelector(".vodal-close").click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-07-03T23:59:42.319135" elapsed="0.011017"/>
+</kw>
+<arg>${exists}</arg>
+<arg>Execute Javascript</arg>
+<arg>document.querySelector(".vodal-close").click()</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-03T23:59:42.318920" elapsed="0.011332"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-03T23:59:44.331008" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-03T23:59:42.330415" elapsed="2.000798"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Does Not Exist">
+<msg time="2025-07-03T23:59:44.335353" level="FAIL">No keyword with name 'Wait Until Element Does Not Exist' found.</msg>
+<arg>css=.vodal-mask</arg>
+<arg>10s</arg>
+<status status="FAIL" start="2025-07-03T23:59:44.335252" elapsed="0.000209">No keyword with name 'Wait Until Element Does Not Exist' found.</status>
+</kw>
+<arg>Wait Until Element Does Not Exist</arg>
+<arg>css=.vodal-mask</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.331474" elapsed="0.004159"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:42.300807" elapsed="2.034971"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.336376" elapsed="0.010914"/>
+</kw>
+<kw name="Click Admin" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[@title="admin"]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.348434" elapsed="0.033490"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:44.382548" level="INFO">Clicking element 'xpath=//a[@title="admin"]'.</msg>
+<arg>xpath=//a[@title="admin"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.382151" elapsed="0.097116"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:44.347946" elapsed="0.131420"/>
+</kw>
+<kw name="Click Logout" owner="login_keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[normalize-space(.)="Đăng xuất"]</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.479988" elapsed="0.027538"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:44.507876" level="INFO">Clicking element 'xpath=//span[normalize-space(.)="Đăng xuất"]'.</msg>
+<arg>xpath=//span[normalize-space(.)="Đăng xuất"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.507697" elapsed="0.089455"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:44.479702" elapsed="0.117548"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/login</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.597723" elapsed="0.313050"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-03T23:59:45.117700" level="INFO">Current location is 'https://testz23.kiotviet.vn/man/#/login'.</msg>
+<arg>${URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-07-03T23:59:44.911419" elapsed="0.206407"/>
+</kw>
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Browser" owner="login_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<msg time="2025-07-03T23:59:45.146699" level="FAIL">Recursive execution stopped.</msg>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="FAIL" start="2025-07-03T23:59:45.146104" elapsed="0.000687">Recursive execution stopped.</status>
+</kw>
+<status status="FAIL" start="2025-07-03T23:59:45.145576" elapsed="0.003265">Recursive execution stopped.</status>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.145067" elapsed="0.003984"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.144884" elapsed="0.004420"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.144775" elapsed="0.004630"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.144626" elapsed="0.004971"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.144520" elapsed="0.005158"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.144354" elapsed="0.005424"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.144237" elapsed="0.005612"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.144079" elapsed="0.005859"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.143950" elapsed="0.006057"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.143726" elapsed="0.006405"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.143501" elapsed="0.006727"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.143304" elapsed="0.007011"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.143146" elapsed="0.007302"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.142775" elapsed="0.007840"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.142378" elapsed="0.008329"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.141988" elapsed="0.008810"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.141667" elapsed="0.009213"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.141283" elapsed="0.009687"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.141035" elapsed="0.010058"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.140720" elapsed="0.010491"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.140480" elapsed="0.010863"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.140121" elapsed="0.011315"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.139894" elapsed="0.011605"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.139500" elapsed="0.012078"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.139254" elapsed="0.012388"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.138926" elapsed="0.012797"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.138567" elapsed="0.013257"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.137856" elapsed="0.014110"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.137562" elapsed="0.014622"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.137262" elapsed="0.015041"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.137044" elapsed="0.015322"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.136722" elapsed="0.015705"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.136487" elapsed="0.015982"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.136187" elapsed="0.016330"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.135967" elapsed="0.016587"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.135636" elapsed="0.016960"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.135420" elapsed="0.017211"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.135183" elapsed="0.017492"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.135002" elapsed="0.017728"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.134751" elapsed="0.018050"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.134563" elapsed="0.018332"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.134254" elapsed="0.018725"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.134113" elapsed="0.018946"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.133958" elapsed="0.019164"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.133831" elapsed="0.019329"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.133620" elapsed="0.019601"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.133433" elapsed="0.019837"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.133158" elapsed="0.020176"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.132939" elapsed="0.020437"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.132597" elapsed="0.020829"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.132277" elapsed="0.021196"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.132031" elapsed="0.021505"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.131844" elapsed="0.021740"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.131648" elapsed="0.021982"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.131411" elapsed="0.022277"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.131160" elapsed="0.022584"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.130926" elapsed="0.022862"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.130776" elapsed="0.023059"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.130664" elapsed="0.023213"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.130492" elapsed="0.023458"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.130373" elapsed="0.023627"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.130219" elapsed="0.023937"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.130108" elapsed="0.024111"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.129954" elapsed="0.024342"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.129850" elapsed="0.024499"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.129700" elapsed="0.024713"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.129586" elapsed="0.024880"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.129386" elapsed="0.025163"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.129185" elapsed="0.025440"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.129004" elapsed="0.025805"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.128898" elapsed="0.025973"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.128744" elapsed="0.026205"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.128633" elapsed="0.026373"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.128494" elapsed="0.026578"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.128404" elapsed="0.026726"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.128276" elapsed="0.026918"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.128157" elapsed="0.027089"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.127995" elapsed="0.027312"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.127875" elapsed="0.027483"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.127698" elapsed="0.027719"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.127558" elapsed="0.027911"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.127312" elapsed="0.028258"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.127098" elapsed="0.028532"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.126924" elapsed="0.028803"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.126799" elapsed="0.028981"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.126632" elapsed="0.029212"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.126508" elapsed="0.029384"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.126348" elapsed="0.029603"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.126225" elapsed="0.029774"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.126050" elapsed="0.030004"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.125930" elapsed="0.030170"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.125754" elapsed="0.030400"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.125627" elapsed="0.030561"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.125450" elapsed="0.030776"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.125301" elapsed="0.030959"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.124990" elapsed="0.031335"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.124771" elapsed="0.031615"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.124600" elapsed="0.031852"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.124472" elapsed="0.032015"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.124289" elapsed="0.032244"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.124152" elapsed="0.032412"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.123953" elapsed="0.032653"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.123791" elapsed="0.032847"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.123267" elapsed="0.033414"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.123144" elapsed="0.033581"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.122967" elapsed="0.033800"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.122839" elapsed="0.033960"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.122659" elapsed="0.034183"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.122514" elapsed="0.034375"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.122201" elapsed="0.034747"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.122020" elapsed="0.034994"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.121837" elapsed="0.035223"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.121715" elapsed="0.035378"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.121537" elapsed="0.035596"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.121415" elapsed="0.035752"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.121247" elapsed="0.035963"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.121110" elapsed="0.036143"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.120927" elapsed="0.036373"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.120804" elapsed="0.036538"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.120624" elapsed="0.036835"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.120510" elapsed="0.036990"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.120366" elapsed="0.037199"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.120226" elapsed="0.037399"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.119979" elapsed="0.037695"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.119861" elapsed="0.037862"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.119714" elapsed="0.038052"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.119604" elapsed="0.038194"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.119453" elapsed="0.038391"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.119350" elapsed="0.038537"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.119205" elapsed="0.038726"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.119099" elapsed="0.038865"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.118937" elapsed="0.039069"/>
+</kw>
+<arg>Close Browser</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-03T23:59:45.118775" elapsed="0.039263"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:45.118275" elapsed="0.039804"/>
+</kw>
+<status status="PASS" start="2025-07-03T23:59:33.596454" elapsed="11.562014"/>
+</test>
+<status status="PASS" start="2025-07-03T23:59:33.368655" elapsed="11.791268"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Logout Success" id="s1" pass="1" fail="0" skip="0">Logout Success</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-03T23:59:33.594837" level="ERROR">Error in file 'D:\New folder\robot_kiotviet_project\resources\login_keywords.robot' on line 4: Initializing library 'SeleniumLibrary' with arguments [ screenshot_on_failure=False ] failed: ValueError: Invalid time string 'screenshot_on_failure=False'.
+Traceback (most recent call last):
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\SeleniumLibrary\__init__.py", line 632, in __init__
+    self.timeout = _convert_timeout(timeout)
+                   ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\SeleniumLibrary\utils\types.py", line 42, in _convert_timeout
+    return timestr_to_secs(timeout)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python313\Lib\site-packages\robot\utils\robottime.py", line 58, in timestr_to_secs
+    raise ValueError(f"Invalid time string '{timestr}'.")
+ValueError: Invalid time string 'screenshot_on_failure=False'.</msg>
+</errors>
+</robot>
